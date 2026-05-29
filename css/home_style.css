@@ -1,0 +1,1370 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+
+body {
+    font-family: wanted-sans;
+    font-size: 15px;
+    background-color: #F5F5DC;
+    box-sizing: border-box;
+}
+
+/* wrap_wrap=---------------- */
+#wrap_wrap{
+    min-width: 1400px;
+    overflow: clip; /* 이전/다음 이미지가 절대 삐져나오지 못하게 칼커팅 */    
+}
+
+
+
+/* --------------solgun ------------------*/
+.slogun {
+    height: 30px;
+    background-color: #E3725B;
+    color: #F5F5DC;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* 최상단 배치 */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.slogun p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.slogun ul {
+    display: flex;
+}
+
+.btn-close {
+    position: absolute;
+    top: 5px;
+    right: 400px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+/* -------------header----------------- */
+#header_wrap {
+    height: 102px;
+    background-color: #2c2c2c;
+    position: sticky;
+    top: 30px;
+    /* 초기에는 슬로건 높이만큼 내려와서 고정 */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease;
+    /* 슬로건이 사라질 때 부드럽게 위로 이동 */
+}
+
+.header {
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-top: 15px;
+}
+
+/* 슬로건이 닫혔을 때 헤더를 브라우저 최상단(top:0)으로 밀착시키는 클래스 */
+#header_wrap.slid-up {
+    top: 0;
+}
+
+/* ------------   gnb    ------------- */
+.gnb {
+    display: flex;
+    gap: 100px;
+}
+
+.gnb li a {
+    display: block;
+    color: #F5F5DC;
+    font-size: 20px;
+    margin-top: 33px;
+    position: relative;
+    transition: color 0.3s ease;
+    /* 색상이 부드럽게 바뀌는 효과 */
+}
+
+/* 호버시 효과------------------------- */
+
+
+.header .gnb a:hover {
+    color: #E3725B;
+    /* 브랜드 포인트 컬러로 변경 */
+}
+
+/* [응용] 호버 시 아래에 부드러운 언더라인 바가 생기는 효과 */
+.header .gnb a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #E3725B;
+    transition: width 0.3s ease;
+}
+
+.header .gnb a:hover::after {
+    width: 100%;
+    /* 마우스를 올리면 왼쪽에서 오른쪽으로 선이 채워짐 */
+}
+
+/* ----------    util     ----------- */
+.util ul {
+    display: flex;
+    gap: 20px;
+}
+
+.util ul li a {
+    display: block;
+    margin-top: 33.5px;
+}
+
+/* -----------  search --------------- */
+.search {
+    box-sizing: border-box;
+    border: #F5F5DC 2px solid;
+    border-radius: 5px;
+    height: 35px;
+    width: 180px;
+    position: relative;
+    margin: 30.5px 40px 0px 0px;
+}
+
+.search input {
+    background-color: #2c2c2c;
+    border-style: none;
+    width: 140px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    color: #F5F5DC;
+}
+
+.search img {
+    position: absolute;
+    top: 2.5px;
+    right: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+/* ----------- header END ----------------------- */
+
+
+
+/* ---------- main banner  ---------- */
+#mainbanner {
+    position: relative;
+    width: 100%;
+    height: 1050px;
+    background-color: #2c2c2c;
+    overflow: hidden; /* 이전/다음 이미지가 절대 삐져나오지 못하게 칼커팅 */
+}
+
+/* 슬라이더 기차 트랙: 가로로 길게 슬라이드들을 이어붙임 */
+.custom-slider-track {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* [교정] 이전 이미지가 튀어나오는 현상을 완벽히 차단하는 정밀 수치 고정 */
+.custom-slide {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%; /* 부모의 100%를 정확히 분할하여 화면에 1장만 배치 */
+    height: 100%;
+}
+
+.custom-slide img {
+    display: block;
+    width: 100%;
+    height: 1050px;
+    object-fit: cover;
+}
+
+/* ------- 메인 배너 내부 텍스트 디자인 ------- */
+.slide-text {
+    position: absolute;
+    top: 360px;
+    left: 290px;
+    color: #F5F5DC;
+    z-index: 10;
+}
+
+.slide-text span {
+    color: #E3725B;
+}
+
+.slide-text h1 {
+    font-size: 50px;
+    line-height: 61px;
+    margin-bottom: 110px;
+}
+
+.slide-text p {
+    font-size: 28px;
+    line-height: 45px;
+    font-weight: 500;
+}
+
+/* ------- [변경] 수동 드래그 안내 텍스트 가이드 스타일 ------- */
+.drag-guide-indicator {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none; /* 마우스 드래그를 방해하지 않도록 터치 간섭 차단 */
+}
+
+/* 가로로 흐르는 바 디자인 */
+.drag-guide-indicator .guide-line {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: rgba(245, 245, 220, 0.2); /* 은은한 아이보리 실선 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 실선 안에서 포인트 컬러 오렌지 바가 좌우로 부드럽게 무한 스와이프되는 효과 */
+.drag-guide-indicator .guide-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #E3725B;
+    animation: lineSwipe 2.5s infinite ease-in-out;
+}
+
+/* 자연스러운 텍스트 가이드 안내 (숨쉬듯 페이드 깜빡임 모션) */
+.drag-guide-indicator .guide-txt {
+    font-size: 13px;
+    color: #F5F5DC;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    animation: textPulse 2.5s infinite ease-in-out;
+}
+
+/* ==================== ⚡ TEXT & LINE ANIMATION KEYFRAMES ==================== */
+@keyframes lineSwipe {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+@keyframes textPulse {
+    0% { opacity: 0.3; transform: scale(0.98); }
+    50% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 0.3; transform: scale(0.98); }
+}
+/* ------------mainbanner END-------------- */
+
+/* best product title */
+.title {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 100px;
+    color: #E3725B;
+    letter-spacing: -0.5px;
+}
+
+/* ----------best product-------------- */
+
+#bestproduct {
+    width: 1320px;
+    height: 650px;
+    margin: 0px auto;
+    position: relative;
+}
+
+/* 개별 슬라이드 (가장 중요: 텍스트 박스 절대 배치의 기준점이 됨) */
+#bestproduct .swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    /* 영역 밖으로 튕겨 나간 글자들 숨김 */
+    border-radius: 20px;
+    /* 슬라이드 전체 라운드 처리 */
+}
+
+/* 이미지 감싸는 상자 너비 고정 */
+/* [수정] 이미지 감싸는 상자: 이미지가 커질 때 이 영역 밖을 무조건 잘라냄 */
+#bestproduct .prod-img-box {
+    position: relative;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    /* 삐져나가는 이미지 숨김 (핵심) */
+    border-radius: 20px;
+    /* 라운드 깎인 테두리 유지 (핵심) */
+}
+
+#bestproduct .prod-img-box a {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+/* 원본 이미지 설정 */
+#bestproduct .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+/* [액자형 내부 테두리 + 딤드 배경] */
+#bestproduct .prod-img-box a::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    border: 10px solid #E3725B;
+    border-radius: 20px;
+    background-color: #2c2c2c;
+
+    opacity: 0;
+    transform: scale(1.06);
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ================== 텍스트 상자 정중앙 고정 레이아웃 ================== */
+#bestproduct .prod-text-box {
+    position: absolute;
+    /* Swiper 정렬 방식과 충돌 없이 .swiper-slide 한가운데 강제 고정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 340px;
+    /* 액자 가이드라인 안쪽으로 쏙 들어가는 크기 */
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+    /* 마우스 오버 간섭 차단 */
+}
+
+/* 제품명 스타일 (초기 상태: 위로 20px 숨김, 투명) */
+#bestproduct .prod-text-box h2 {
+    font-size: 22px;
+    color: #F5F5DC;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    word-break: keep-all;
+    letter-spacing: -0.5px;
+
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 제품 가격 스타일 (초기 상태: 아래로 20px 숨김, 투명) */
+#bestproduct .prod-text-box p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #E3725B;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* ================== ⚡ [구조 커스텀] A TAG HOVER EFFECT ================== */
+
+/* 이미지 링크(a 태그)에 마우스를 올렸을 때 이펙트 발동 */
+#bestproduct .prod-img-box a:hover {
+
+    /* 1. 내부 액자라인 선명해지며 안쪽으로 조여짐 */
+    &::before {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    /* 2. 원본 이미지 미세 확대 효과 */
+    & img {
+        transform: scale(1.05);
+    }
+
+    /* 3. 부모 관계를 타고 올라가 바깥에 있는 h2를 위에서 아래 정위치(0)로 호출 */
+}
+
+/* HTML 구조에 맞춰 a:hover 시 텍스트 상자 제어 */
+#bestproduct .prod-img-box:has(a:hover)+.prod-text-box h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#bestproduct .prod-img-box:has(a:hover)+.prod-text-box p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Swiper 페이지네이션 컬러 */
+.bp .swiper-pagination-bullet {
+    background: #E3725B;
+}
+/* ----------best product END---------- */
+
+
+
+
+
+
+
+
+
+
+/* ---------- product ----------------- */
+/* 메인 레이아웃 컨테이너 */
+.furniture-section {
+    display: flex;
+    width: 1320px;
+    margin: 100px auto;
+    position: relative;
+    padding: 20px;
+}
+
+/* 왼쪽 영역: 화면에 고정 (Fixed) */
+.left-container {
+    position: sticky;
+    top: 60px;
+    width: 900px;
+    /* 전체 프레임 이미지 크기에 맞게 조절 */
+    height: 900px;
+}
+
+/* 왼쪽 전체 프레임 배경 이미지 배치 */
+.frame-wrapper {
+    position: relative;
+    position: sticky;
+    width: 900px;
+}
+
+.bg-frame {
+    width: 100%;
+    display: block;
+}
+
+/* 프레임 내부 클릭 요소들 absolute 배치 */
+.menu-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-item {
+    position: absolute;
+}
+/* 왼쪽 이미지 호버시 */
+
+/* [공통] 가구 버튼 전체에 마우스를 올리면 기본 포인터 손가락 모양 대신 커스텀 설정을 따르도록 지정 */
+.menu-list .menu-item a {
+    cursor: pointer; /* 이미지 파일이 깨지거나 로드되지 않을 때를 대비한 기본값 */
+}
+
+/* [소파] 버튼 호버 시 마우스 커서 변경 */
+.menu-list .item-sofa a:hover {
+    /* cursor: url('이미지경로') X좌표 Y좌표, fallback(대비책); */
+    cursor: url('../images/icon/sofa.png') 64 64, pointer;
+}
+
+/* [행거] 버튼 호버 시 마우스 커서 변경 */
+.menu-list .item-hanger a:hover {
+    cursor: url('../images/icon/hanger.png') 64 64, pointer;
+}
+
+/* [테이블] 버튼 호버 시 마우스 커서 변경 */
+.menu-list .item-table a:hover {
+    cursor: url('../images/icon/table.png') 64 64, pointer;
+}
+
+/* [수납장] 버튼 호버 시 마우스 커서 변경 */
+.menu-list .item-cabinet a:hover {
+    cursor: url('../images/icon/cabinet.png') 64 64, pointer;
+}
+
+/* [의자] 버튼 호버 시 마우스 커서 변경 */
+.menu-list .item-chair a:hover {
+    cursor: url('../images/icon/chair.png') 64 64, pointer;
+}
+
+
+/* [중요] 각 가구 아이콘의 위치와 크기 (프레임 이미지에 맞게 % 수치 조절 필요) */
+.item-sofa {
+    top: 239.5px;
+    left: 203px;
+    width: 360px;
+}
+
+.item-hanger {
+    top: 223.9px;
+    left: 632.2px;
+    width: 108px;
+}
+
+.item-table {
+    top: 569.4px;
+    left: 191px;
+    width: 193px;
+}
+
+.item-cabinet {
+    top: 574px;
+    left: 431px;
+    width: 140.5px;
+}
+
+.item-chair {
+    top: 619px;
+    left: 655px;
+    width: 95.15px;
+}
+
+.menu-item a img {
+    width: 100%;
+    display: block;
+}
+
+/* 기본적으로 off 이미지만 보이고 on 이미지는 숨김 */
+.menu-item .img-on {
+    display: none;
+}
+
+.menu-item.active .img-off {
+    display: none;
+}
+
+.menu-item.active .img-on {
+    display: block;
+}
+
+
+/* 오른쪽 영역: 스크롤 영역 (왼쪽 너비만큼 margin-left 부여) */
+.right-container {
+    margin-left: 18px;
+    margin-top: 155px;
+    flex: 1;
+}
+
+/* 가구 리스트 그룹 스타일 */
+.content-group {
+    display: none;
+    /* 기본적으로 모두 숨김 */
+}
+
+.content-group.active {
+    display: block;
+    /* 활성화된 그룹만 표시 */
+}
+
+/* 오른쪽 가구 이미지 스타일 (세로로 6장 배치) */
+.product-list li {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.product-list img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 상품 링크 영역 */
+.product-list li a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 원본 이미지 */
+.product-list img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+    /* 호버 시 이미지 미세 확대 효과 (선택사항) */
+}
+
+/* [추가] 마우스 호버 시 어두운 배경 오버레이 레이어 */
+.product-list li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2c2c2c;
+    opacity: 0;
+    /* 평소에는 투명 */
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    /* 부드러운 전환 */
+}
+
+/* [추가] 제품명 및 가격 컨테이너 박스 */
+.product-info {
+    position: absolute;
+    bottom: -80px;
+    /* 평소에는 아래쪽에 숨겨둠 */
+    left: -18px;
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+    /* 오버레이보다 위에 위치 */
+    transition: bottom 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* 부드럽게 올라오는 모션 */
+    text-align: center;
+}
+
+/* 제품명 스타일 */
+.product-info .prod-name {
+    color: #F5F5DC;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* 가격 스타일 */
+.product-info .prod-price {
+    color: #E3725B;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+/* ================= HOVER EFFECT (마우스 올렸을 때) ================= */
+
+/* 1. 이미지에 어두운 가림막(오퍼시티 50%) 생성 */
+.product-list li:hover a::before {
+    opacity: 0.7;
+}
+
+/* 2. 제품 정보가 아래에서 위로 나타남 */
+.product-list li:hover .product-info {
+    bottom: 150px;
+}
+
+
+
+/* =============중간에 흘러가는 섹션================ */
+/* 중간 로고 섹션 전체 컨테이너 */
+.logo-break-section {
+    width: 100%;
+    height: 300px;
+    /* 300px 높이 고정 */
+    background-color: #2c2c2c;
+    overflow: hidden;
+    /* 아래 숨겨진 가구 이미지들이 안 보이도록 커팅 */
+    position: relative;
+}
+
+/* 내부 정렬을 위한 이너 래퍼 */
+.logo-container-inner {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+/* ================== 중앙 브랜드 로고 설정 ================== */
+.logo-break-section .logo-box a {
+    display: block;
+    position: relative;
+    z-index: 10;
+    /* 가구보다 위에 오도록 설정 */
+}
+
+.logo-break-section .logo-box img {
+    width: 500px;
+    display: block;
+    opacity: 0.4;
+    /* 평소에는 40% 투명도로 어둡게 배치 */
+    filter: drop-shadow(0 0 0px rgba(227, 114, 91, 0));
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ================== 양옆 가구 모형 오브젝트 설정 ================== */
+.logo-break-section .furniture-obj {
+    position: absolute;
+    bottom: -60px;
+    /* [초기 상태] 300px 박스 밑바닥 아래로 숨겨둠 */
+    opacity: 0;
+    /* 평소에는 투명하게 감춤 */
+    z-index: 5;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    /* 부드럽게 떠오르는 중력 모션 */
+}
+
+/* 왼쪽 가구 위치 조절 (중앙 기준 왼쪽으로 이동) */
+.logo-break-section .obj-left {
+    left: 30px;
+    /* 로고와의 간격에 따라 25%~35% 사이 조정 가능 */
+}
+
+/* 오른쪽 가구 위치 조절 (중앙 기준 오른쪽으로 이동) */
+.logo-break-section .obj-right {
+    right: 30px;
+    /* 로고와의 간격에 따라 25%~35% 사이 조정 가능 */
+}
+
+/* 가구 이미지 자체 크기 제어 (300px 안에서 짤리지 않는 크기 가이드) */
+.logo-break-section .furniture-obj img {
+    height: 120px;
+    /* 가구 모형 이미지 높이를 300px에 맞게 자동 최적화 */
+    width: auto;
+    display: block;
+}
+
+
+/* ==================HOVER EFFECT================== */
+
+/* 전체 섹션이나 로고 영역에 마우스가 올라가면 양옆 가구와 로고가 동시에 반응 */
+.logo-break-section:hover {
+
+    /* 1. 브랜드 로고가 100% 선명하게 밝아지며 후광 조명 온 */
+    .logo-box img {
+        opacity: 1;
+        filter: drop-shadow(0 0 25px rgba(227, 114, 91, 0.65));
+        transform: scale(1.03);
+    }
+
+    /* 2. 숨겨져 있던 좌우 가구 모형이 위로 스르륵 떠오르며 안착 */
+    .furniture-obj {
+        bottom: 90px;
+        /* 300px 높이 내에서 보기 좋게 상하 중앙선 쯤으로 띄움 */
+        opacity: 0.85;
+        /* 가구가 너무 시선을 뺏지 않도록 감성적인 투명도 부여 */
+    }
+}
+
+
+
+
+
+/* Review------------------------------------------------------- */
+
+
+
+
+.review-section {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* 타이틀 스타일 */
+.review-section h1.section-title {
+    font-size: 40px;
+    color: #E3725B;
+    /* 브랜드 포인트 컬러 */
+    font-weight: 800;
+    margin-bottom: 100px;
+    letter-spacing: -0.5px;
+}
+
+/* 리뷰 리스트 (4열 가로 배치) */
+.review-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+/* [교정] 개별 리뷰 카드 박스 
+   width를 20% -> 23.5%로 확장하여 4개의 카드가 화면 여백을 꽉 채우도록 밸런스를 맞췄습니다. */
+.review-card {
+    width: 20%;
+    background-color: #2c2c2c;
+    /* 어두운 배경색 */
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== ⚡ 이미지 3D 뒤집기 효과 (Card Flip) ==================== */
+.flip-container {
+    width: 100%;
+    height: 240px;
+    /* 시안 비율에 맞춘 이미지 박스 높이 고정 */
+    perspective: 1000px;
+    /* 3D 입체감 깊이 설정 */
+    margin-bottom: 15px;
+}
+
+/* 회전하는 내부 카드 */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    /* 3D 자식 요소 유지 */
+}
+
+/* 호버 시 Y축 기준 180도 회전 (뒤집힘) */
+.flip-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 앞면 & 뒷면 공통 속성 */
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* 뒤집혔을 때 뒷면의 뒷모습 숨김 */
+    border-radius: 20px 20px 0px 0px; /* 카드 외곽 라운딩에 맞춰 상단 모서리 20px 통일 */
+    overflow: hidden;
+}
+
+/* 카드 앞면 (기본 원본 이미지) */
+.flip-front {
+    background-color: #eee;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+/* 카드 뒷면 (호버 시 보여줄 서브 이미지) */
+.flip-back {
+    background-color: #444;
+    transform: rotateY(180deg);
+    /* 초기 세팅을 180도 돌려놓음 */
+    
+    /* 내부 요소들을 겹치게 만들기 위해 relative 기준점 설정 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 뒷면 전용 이미지: 글자를 밀어내지 못하도록 3차원 절대 좌표로 바닥에 고정 */
+.flip-back img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* 가장 아래 레이어 */
+}
+
+/* 뒷면 이미지 전용 딤드 가림막 (오퍼시티 60%) */
+.flip-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2c2c2c;
+    opacity: 0.6; /* 가림막 어둠 강도 조절 가능 */
+    z-index: 2; /* 이미지보다 위에 쌓임 */
+}
+
+/* 뒷면에 함께 뜰 텍스트 상자 레이아웃 (정중앙 고정) */
+.flip-back .hover-info-box {
+    position: relative;
+    z-index: 3; /* 가림막보다 최상위에 위치 (글자 가려짐 방지) */
+    width: 100%;
+    text-align: center;
+    padding: 0 15px;
+}
+
+/* 제품명 스타일 (초기 상태: 위로 15px 숨김, 투명) */
+.flip-back .hover-info-box h2 {
+    color: #F5F5DC; /* 아이보리색 */
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    word-break: keep-all;
+    letter-spacing: -0.5px;
+    
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition-delay: 0.15s; 
+}
+
+/* 제품 가격 스타일 (초기 상태: 아래로 15px 숨김, 투명) */
+.flip-back .hover-info-box p {
+    color: #E3725B; /* 오렌지 포인트 컬러 */
+    font-size: 14px;
+    font-weight: 600;
+    
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition-delay: 0.15s;
+}
+
+/* ⚡ 이미지 박스 호버 시 각각의 텍스트가 제자리(0)로 찾아오며 선명해짐 */
+.flip-container:hover .flip-back .hover-info-box h2{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flip-container:hover .flip-back .hover-info-box p{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 이미지 공통 스타일 (박스에 꽉 차게 최적화) */
+.flip-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==================== 별점 고정 레이아웃 ==================== */
+.star-box {
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* 개별 별 스타일 (클릭 액션 제거 및 화살표 커서로 고정) */
+.star-box .star-item {
+    color: #555555;
+    /* 평소 꺼져있는 별 색상 (어두운 회색) */
+    font-size: 25px;
+    cursor: default;       /* [수정] 손가락 모양 대신 일반 화살표 커서로 변경 */
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: -2px;
+    pointer-events: none;  /* [추가] 마우스 클릭 자체를 브라우저 단에서 완전히 차단 */
+}
+
+/* [삭제] 마우스를 올렸을 때 별이 살짝 커지는 효과(.star-box .star-item:hover)를 제거했습니다 */
+
+/* 활성화된 별 색상 (주황색) */
+.star-box .star-item.on {
+    color: #E3725B;
+}
+
+/* 평점 숫자 노출 텍스트 */
+.star-box .score-txt {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* ==================== 텍스트 콘텐츠 레이아웃 ==================== */
+
+/* 리뷰 평문 본문 */
+.review-comment {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6; /* 가독성을 위해 자간/줄바꿈 서식 보정 */
+    min-height: 68px; /* 글자 길이에 따라 카드가 찌그러지지 않게 높이 보정 */
+    margin: 12px 20px 15px 20px;
+    overflow: hidden;
+    word-break: keep-all;
+}
+
+/* 하단 제품 정보 배지 공간 */
+.prod-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin: 0px 20px 20px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.prod-badge:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 배지 안의 미니 스퀘어 썸네일 */
+.prod-badge .thumb-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 8px;
+    background-color: #F5F5DC;
+}
+
+.prod-badge .thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prod-badge span {
+    color: #F5F5DC;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* -------------------Lookbook ------------------- */
+
+
+ .lookbook-section {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* LOOKBOOK 대타이틀 */
+.lookbook-section h1.section-title {
+    font-size: 40px;
+    color: #E3725B;
+    font-weight: 800;
+    margin-bottom: 80px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+/* 좌우 레이아웃 분할 배치 */
+.lookbook-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* ==================== 왼쪽: 큰 이미지 및 (+) 버튼 배치 영역 ==================== */
+.lookbook-left {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.lookbook-left .main-look-img {
+    width: 100%;
+    display: block;
+}
+
+/* (+) 핀 버튼 기본 공통 스타일 */
+.pin-btn {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* 🔴 OFF 상태 (배경색이 #E3725B, (+) 텍스트는 흰색) */
+.pin-btn.off {
+    background-color: #E3725B;
+    color:#e6cfc4;
+    border: 2px solid #E3725B;
+}
+
+/* 🟢 ON 상태 (배경색 흰색, (+) 텍스트만 #E3725B) */
+.pin-btn.on {
+    background-color: #e6cfc4;
+    color: #E3725B;
+    border: 2px solid #E3725B;
+    transform: scale(1.1);
+}
+
+/* 핀 버튼들 개별 % 좌표값 */
+.pin-hanger  { top: 35%; left: 3%; }
+.pin-cabinet { top: 48%; left: 22%; }
+.pin-table   { top: 72%; left: 58%; }
+.pin-sofa    { top: 60%; left: 93%; }
+
+
+/* ==================== 오른쪽: 가구 단품 리스트 (하단 노출 구조) ==================== */
+.lookbook-right {
+    width: 45%;
+    position: relative;
+}
+
+.lookbook-item {
+    display: none; /* 기본 숨김 */
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: left; /* 하단 텍스트 왼쪽 정렬 */
+}
+
+.lookbook-item.active {
+    display: block;
+}
+
+/* 상품 단품 이미지 박스 */
+.prod-view-box {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.prod-view-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 하단 상품 정보 텍스트 영역 */
+.prod-info-bottom {
+    padding: 0 5px;
+}
+
+/* 제품명 */
+.prod-info-bottom .p-name {
+    font-size: 22px;
+    color: #2c2c2c;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+/* 가격 */
+.prod-info-bottom .p-price {
+    font-size: 16px;
+    color: #666666;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* [추가] View More 버튼 스타일 정의 */
+.prod-info-bottom .btn-viewmore {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    color: #E3725B; /* 브랜드 포인트 컬러 */
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    border: #E3725B 2px solid;
+    border-radius: 15px;
+    padding: 0px 12px;
+    margin-left: -10px;
+}
+
+/* 화살표 기호 모션 */
+.prod-info-bottom .btn-viewmore span {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+/* ⚡ 호버 시 화살표가 오른쪽으로 슥 밀려 나가는 세련된 링크 효과 */
+.prod-info-bottom .btn-viewmore:hover {
+    color: #E3725B; /* 글자색 차콜로 전환 */
+}
+
+.prod-info-bottom .btn-viewmore:hover span {
+    transform: translateX(6px); /* 화살표가 우측으로 이동 */
+}
+
+
+
+/* ----------------brand ------------------- */
+
+#brand_wrap{
+    text-align: left;
+    margin-top: 95px;
+    height: 1042px;
+    background: no-repeat center url(../images/brand\ main.jpg);
+}
+.B_txt{
+    width: 1320px;
+    margin: 0 auto;     
+}
+.B_txt h1{
+    font-size: 40px;
+    font-weight: 800;
+    text-align: left;
+    color: #E3725B;
+    padding: 120px 0px;
+    letter-spacing: -0.5px;
+}
+.B_txt h2{
+    font-size: 38px;
+    font-weight: 600;
+    color: #F5F5DC;
+    border-bottom: #E3725B 3px solid;
+    padding-bottom: 30px;
+    width: 400px;
+}
+.S_txt{
+    width: 1320px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    text-align: left;
+}
+.S_txt p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #F5F5DC;
+    line-height: 1.6;
+}
+.brand_v_btn{
+    margin-top: 50px;
+    width: 300px;
+    height: 70px;
+    background: #181818;
+}
+.S_txt a{
+    font-size: 23px;
+    display:block;
+    color: #F5F5DC;
+    font-weight: 600;
+    text-align: center;
+    line-height: 70px;
+}
+.S_txt a:hover{
+    color: #E3725B;
+}
+
+
+
+
+/* -----------------footer------------------- */
+#footer_wrap{
+    height: 206px;
+    background-color: #2c2c2c;
+    padding: 30px 0px;
+}    
+.footer{
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.f_txt ul{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.f_txt ul li a{
+    display: block;
+    color: #F5F5DC;
+    font-size: 18px;
+}
+.f_txt ul li a:hover{
+    color: #E3725B;
+    font-weight: 800;
+}
+.f_txt p{
+    color: #F5F5DC;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.f_txt h5{
+    color: #F5F5DC;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+.sns_icon{
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    margin-bottom: 40px;
+}

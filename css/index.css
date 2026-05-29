@@ -1,0 +1,165 @@
+/* intro-loading-screen ----------------------------*/
+
+
+
+#intro-loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* 5장의 이미지가 칼정렬로 겹쳐질 수 있도록 기준점 너비 부여 (로고 원본 크기 가이드) */
+.intro-logo-container {
+    position: relative;
+    width: 800px;  /* 로고 전체 가로 크기에 맞춰 대략 가이드 고정 */
+    height: 300px; /* 로고 전체 세로 크기에 맞춰 대략 가이드 고정 */
+}
+
+/* 5장 이미지 공통: 3차원으로 한곳에 포개어 포지셔닝 */
+.intro-logo-container .layer-ani {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    /* 애니메이션 공통 공식 설정 (0.8초 동안 부드럽게 감속 정착) */
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==================== 🎬 [수정] 순서형 3단계 애니메이션 매핑 ==================== */
+
+/* ------------------------------------------------------------------
+   [1단계] 좌우 글자 동시 입장 (0초 시작 -> 0.6초 동안 진행)
+------------------------------------------------------------------ */
+/* NA: 왼쪽에서 등장 */
+.intro-logo-container .na-text {
+    animation-name: moveFromLeft;
+    animation-duration: 0.6s;
+}
+@keyframes moveFromLeft {
+    0% { opacity: 0; transform: translateX(-800px); }
+    100% { opacity: 1; transform: translateX(-230px); }
+}
+
+/* KIT: 오른쪽에서 등장 */
+.intro-logo-container .kit-text {
+    animation-name: moveFromRight;
+    animation-duration: 0.6s;
+}
+@keyframes moveFromRight {
+    0% { opacity: 0; transform: translateX(800px); }
+    100% { opacity: 1; transform: translateX(280px); }
+}
+
+
+/* ------------------------------------------------------------------
+   [2단계] 상하 프레임 동시 입장 (0.6초 대기 -> 0.6초 동안 진행)
+------------------------------------------------------------------ */
+/* 「 프레임: 위쪽에서 내려옴 */
+.intro-logo-container .frame-top {
+    animation-name: moveFromTop;
+    animation-delay: 0.6s; /* 글자가 다 붙은 후 출발하도록 지연 */
+    animation-duration: 0.6s;
+    opacity: 0; /* 초기 상태에서 투명하게 시작 */
+}
+@keyframes moveFromTop {
+    0% { opacity: 0; transform: translate(-800px, -800px); }
+    100% { opacity: 1; transform: translate(-260px, -40px); }
+}
+
+/* 」 프레임: 아래쪽에서 올라옴 */
+.intro-logo-container .frame-bottom {
+    animation-name: moveFromBottom;
+    animation-delay: 0.6s; /* 글자가 다 붙은 후 출발하도록 지연 */
+    animation-duration: 0.6s;
+    opacity: 0; /* 초기 상태에서 투명하게 시작 */
+}
+@keyframes moveFromBottom {
+    0% { opacity: 0; transform: translate(800px, 800px); }
+    100% { opacity: 1; transform: translate(310px, 40px); }
+}
+
+
+/* ------------------------------------------------------------------
+   [3단계] 중앙 콜론 최종 등장 (1.2초 대기 -> 0.4초 동안 진행)
+------------------------------------------------------------------ */
+/* 가운데 콜론(:): 글자와 프레임이 모두 완착된 직후 뿅 출현 */
+.intro-logo-container .colon-center {
+    opacity: 0;
+    animation-name: zoomInColon;
+    animation-delay: 1.2s; /* 1단계(0.6s) + 2단계(0.6s) 연산 결과 반영 */
+    animation-duration: 0.4s; 
+}
+@keyframes zoomInColon {
+    0% { opacity: 0; transform: scale(0.4); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+/* ==================== ⚡ [추가] 홈으로 가기 버튼 스타일 및 모션 ==================== */
+
+/* 버튼을 감싸는 컨테이너 박스 (정중앙 정렬 및 아래 배치) */
+.intro-btn-wrap {
+    position: absolute;
+    bottom: -120px; /* 로고 이미지 밑으로 간격을 두고 배치 (위치 변경 가능) */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+/* 실제 홈으로 가기 버튼 디자인 */
+.intro-btn-wrap .btn-go-home {
+    display: inline-block;
+    border: 3px solid #E3725B; /* 브랜드 포인트 오렌지 테두리 */
+    background-color: transparent;
+    padding: 10px 35px;
+    color: #E3725B;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px; /* 둥근 캡슐형 핏 */
+    letter-spacing: 1px;
+    
+    /* [기본 상태] 투명하고 아래로 15px 내려가서 숨김 대기 */
+    opacity: 0;
+    transform: translateY(15px);
+    
+    /* ⚡ 로고 완성 타이밍(1.6초)에 맞춰 0.5초 동안 등장 애니메이션 작동 */
+    animation: fadeUpBtn 0.5s forwards cubic-bezier(0.25, 1, 0.5, 1);
+    animation-delay: 1.6s; 
+    
+    transition: all 0.3s ease; /* 호버 반전 효과용 */
+}
+
+/* 마우스를 올렸을 때 브랜드 컬러로 가득 채워지는 반전 인터랙션 */
+.intro-btn-wrap .btn-go-home:hover {
+    background-color: #E3725B;
+    color: #F5F5DC; /* 밝은 베이지로 글자 색상 반전 */
+    box-shadow: 0 5px 15px rgba(227, 114, 91, 0.3);
+}
+
+/* 🎬 버튼 페이드인 + 스르륵 위로 올라오는 애니메이션 정의 */
+@keyframes fadeUpBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

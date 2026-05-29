@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>NA:KIT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon/favicon.png">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- main home css -->
+    <link rel="stylesheet" href="./css/home_style.css">
+    <!-- mainbanner Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- best product Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+    <div id="wrap_wrap">
+        <!-- slogun -->
+        <div class="slogun">
+            <p>YOUR SPACE, YOUR CREATION</p>
+            <!-- X 닫기 버튼 추가 -->
+            <button type="button" class="btn-close"><img src="./images/icon/icon (x).png" alt="" width="20px"></button>
+        </div>
+        <!-- header & gnb -->
+        <div id="header_wrap">
+            <div class="header">
+                <div class="logo">
+                    <h1><a href="./index.html"><img src="./images/icon/logo.png" alt="logo" width="222px"
+                                height="72px"></a>
+                    </h1>
+                </div>
+                <div>
+                    <ul class="gnb">
+                        <li><a href="./home.html">SHOP</a></li>
+                        <li><a href="./sub/Lookbook.html">LOOKBOOK</a></li>
+                        <li><a href="./sub/custom.html">CUSTOM</a></li>
+                        <li><a href="./sub/Brandstory.html">BRAND</a></li>
+                    </ul>
+                </div>
+                <div class="util">
+                    <ul>
+                        <li class="search">
+                            <input type="search" placeholder="Search">
+                            <img src="./images/icon/search.png" alt="search" width="25px">
+                        </li>
+                        <li><a href="#"><img src="./images/icon/mypage.png" alt="mypage" width="30px" height="30px"></a>
+                        </li>
+                        <li><a href="#"><img src="./images/icon/cart.png" alt="cart" width="30px" height="30px"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- main banner -->
+        <!-- 오픈소스 플러그인을 쓰지 않는 100% 커스텀 메인배너 슬라이더 -->
+        <div id="mainbanner">
+            <!-- 실제 제이쿼리로 부드럽게 움직이는 슬라이더 트랙 -->
+            <div class="custom-slider-track">
+
+                <!-- 슬라이드 1 -->
+                <div class="custom-slide">
+                    <img src="./images/Mainbanner1.jpg" alt="mb1">
+                    <div class="slide-text">
+                        <h1>나를 만드는 가장 즐거운 조각<br><span>NA:KIT</span></h1>
+                        <p>당신의 공간이 확장되는 만큼<br> 유연하게 변화하는 원목 라이프</p>
+                    </div>
+                </div>
+
+                <!-- 슬라이드 2 -->
+                <div class="custom-slide">
+                    <img src="./images/Mainbanner2.jpg" alt="mb2">
+                    <div class="slide-text">
+                        <h1>나무의 온기를 만지며<br>나를 채우는 <span>시간</span></h1>
+                        <p>하나씩 맞추어가는 정교한 즐거움 속에서<br>환경을 생각한 지속 가능한 원목과 변치 않는<br>간결함이 당신의 일상에 가치를 더합니다</p>
+                    </div>
+                </div>
+
+                <!-- 슬라이드 3 -->
+                <div class="custom-slide">
+                    <img src="./images/Mainbanner3.jpg" alt="mb3">
+                    <div class="slide-text">
+                        <h1>내 손으로 완성한<br>나다운 온전한 <span>공간</span></h1>
+                        <p>거실부터 침실까지 일상을 유연하게 연결합니다<br>유행에 흔들리지 않고 당신의 삶에 <br>완벽하게 스며드는 모듈러 퍼니처 시스템을 만나보세요</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- [변경] 점 버튼을 없애고 세련된 수동 드래그 안내 가이드 텍스트 컴포넌트 배치 -->
+            <div class="drag-guide-indicator">
+                <span class="guide-line"></span>
+                <p class="guide-txt">스와이프 / 드래그 해보세요</p>
+            </div>
+        </div>
+        <!-- best product -->
+        <div class="title" data-aos="fade-down" data-aos-duration="1000">
+            <p>Best Product</p>
+        </div>
+        <!--best product Swiper -->
+        <div id="bestproduct" class="swiper bp">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/아카시아 원목 의자 52,800.jpg" alt="52,800"
+                                width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>아카시아 원목 의자</h2>
+                        <p>52,800원</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/협탁 소파 사이드 테이블 48,900.jpg" alt="48,900"
+                                width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>협탁 소파 사이드 테이블</h2>
+                        <p>48,900원</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/고무나무 원목 벤치 49,000.avif" alt="49,000"
+                                width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>고무나무 원목 벤치</h2>
+                        <p>49,000원</p>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/원목 식탁 4인용 144,000.avif" alt="144,000"
+                                width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>원목 식탁 4인용</h2>
+                        <p>49,000원</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/책꽂이 60,600.avif" alt="60,600" width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>수납형 책꽂이</h2>
+                        <p>60,600원</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img-box">
+                        <a href="#"><img src="./images/bestproduct/패브릭 3인 원목 소파 208,500.avif" alt="208,500"
+                                width="400px"></a>
+                    </div>
+                    <div class="prod-text-box">
+                        <h2>패브릭 3인 원목 소파</h2>
+                        <p>208,500원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- product -->
+        <div class="furniture-section">
+            <!-- ================= 왼쪽 고정 영역 (총 11장 이미지) ================= -->
+            <div class="left-container">
+                <div class="frame-wrapper">
+                    <!-- 1. 전체 프레임 이미지 (배경) -->
+                    <img src="images/main.png" alt="전체 프레임" class="bg-frame">
+
+                    <!-- 5종 가구 버튼 리스트 (각 2장씩 총 10장) -->
+                    <ul class="menu-list">
+                        <!-- 소파 (기본 활성화) -->
+                        <li class="menu-item item-sofa active" data-target="sofa">
+                            <a href="#none">
+                                <img src="images/main page/sofa_off.png" alt="소파" class="img-off">
+                                <img src="images/main page/sofa_on.png" alt="소파 선택됨" class="img-on">
+                            </a>
+                        </li>
+                        <!-- 행거 -->
+                        <li class="menu-item item-hanger" data-target="hanger">
+                            <a href="#none">
+                                <img src="images/main page/hanger_off.png" alt="행거" class="img-off">
+                                <img src="images/main page/hanger_on.png" alt="행거 선택됨" class="img-on">
+                            </a>
+                        </li>
+                        <!-- 테이블 -->
+                        <li class="menu-item item-table" data-target="table">
+                            <a href="#none">
+                                <img src="images/main page/table_off.png" alt="테이블" class="img-off">
+                                <img src="images/main page/table_on.png" alt="테이블 선택됨" class="img-on">
+                            </a>
+                        </li>
+                        <!-- 수납장 -->
+                        <li class="menu-item item-cabinet" data-target="cabinet">
+                            <a href="#none">
+                                <img src="images/main page/cabinet_off.png" alt="수납장" class="img-off">
+                                <img src="images/main page/cabinet_on.png" alt="수납장 선택됨" class="img-on">
+                            </a>
+                        </li>
+                        <!-- 의자 -->
+                        <li class="menu-item item-chair" data-target="chair">
+                            <a href="#none">
+                                <img src="images/main page/chair_off.png" alt="의자" class="img-off">
+                                <img src="images/main page/chair_on.png" alt="의자 선택됨" class="img-on">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= 오른쪽 스크롤 영역 (5종 x 6장 = 총 36장 이미지) ================= -->
+            <div class="right-container">
+
+                <!-- 소파 상품 그룹 (기본 활성화) -->
+                <div class="content-group active" id="group-sofa">
+                    <ul class="product-list">
+                        <li><a href="#none"><img src="images/product/sofa/고무나무 2인 소파 380,000.avif" alt="소파 상품 1">
+                                <div class="product-info">
+                                    <p class="prod-name">고무나무 2인 소파</p>
+                                    <p class="prod-price">380,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/sofa/원목 2인 소파 카페 123,900.avif" alt="소파 상품 2">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 2인 카페 소파</p>
+                                    <p class="prod-price">123,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/sofa/패브릭 1인 원목 소파 123,000.avif" alt="소파 상품 3">
+                                <div class="product-info">
+                                    <p class="prod-name">패브릭 1인 원목 소파</p>
+                                    <p class="prod-price">123,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/sofa/패브릭 2인 원목 소파 170,000.avif" alt="소파 상품 4">
+                                <div class="product-info">
+                                    <p class="prod-name">패브릭 2인 원목 소파</p>
+                                    <p class="prod-price">170,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/sofa/평상형 원목 소파베드(슈퍼싱글) 360,000.avif" alt="소파 상품 5">
+                                <div class="product-info">
+                                    <p class="prod-name">평상형 원목 소파베드(슈퍼싱글)</p>
+                                    <p class="prod-price">360,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/sofa/평상형 원목 소파베드(싱글) 216,100.avif" alt="소파 상품 6">
+                                <div class="product-info">
+                                    <p class="prod-name">평상형 원목 소파베드(싱글)</p>
+                                    <p class="prod-price">216,100원</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- 행거 상품 그룹 -->
+                <div class="content-group" id="group-hanger">
+                    <ul class="product-list">
+                        <li><a href="#none"><img src="images/product/hanger/고무나무 원목 스탠드 수납 선반행거 79,000.avif"
+                                    alt="행거 상품 1">
+                                <div class="product-info">
+                                    <p class="prod-name">고무나무 원목 스탠드 수납 선반행거</p>
+                                    <p class="prod-price">79,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/hanger/대나무 2단 선반 행거 44,000.avif" alt="행거 상품 2">
+                                <div class="product-info">
+                                    <p class="prod-name">대나무 2단 선반 행거</p>
+                                    <p class="prod-price">44,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/hanger/대나무 원목 스탠드행거 옷걸이 37,800.avif" alt="행거 상품 3">
+                                <div class="product-info">
+                                    <p class="prod-name">대나무 원목 스탠드행거 옷걸이</p>
+                                    <p class="prod-price">37,800원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/hanger/우드 코트랙행거 25,900.avif" alt="행거 상품 4">
+                                <div class="product-info">
+                                    <p class="prod-name">우드 코트랙행거</p>
+                                    <p class="prod-price">25,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/hanger/원목 벽걸이 행거 선반 38,400.avif" alt="행거 상품 5">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 벽걸이 행거 선반</p>
+                                    <p class="prod-price">38,400원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/hanger/원목 사다리 행거 2colors 25,900.avif"
+                                    alt="행거 상품 6">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 사다리 행거 2colors</p>
+                                    <p class="prod-price">25,900원</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- 테이블 상품 그룹 -->
+                <div class="content-group" id="group-table">
+                    <ul class="product-list">
+                        <li><a href="#none"><img src="images/product/table/사이드가드 원목 타원형 테이블 34,900.avif" alt="테이블 상품 1">
+                                <div class="product-info">
+                                    <p class="prod-name">사이드가드 원목 타원형 테이블</p>
+                                    <p class="prod-price">34,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/table/원목 거실 소파 테이블 320,000.avif" alt="테이블 상품 2">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 거실 소파 테이블</p>
+                                    <p class="prod-price">320,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/table/원목 좌식 테이블 73,900.avif" alt="테이블 상품 3">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 좌식 테이블</p>
+                                    <p class="prod-price">73,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/table/원목 테이블 블랙 149,000.avif" alt="테이블 상품 4">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 테이블 블랙</p>
+                                    <p class="prod-price">149,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/table/자작나무 테이블 399,000.avif" alt="테이블 상품 5">
+                                <div class="product-info">
+                                    <p class="prod-name">자작나무 테이블</p>
+                                    <p class="prod-price">399,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/table/접이식 거실 소파 테이블 69,000.avif" alt="테이블 상품 6">
+                                <div class="product-info">
+                                    <p class="prod-name">접이식 거실 소파 테이블</p>
+                                    <p class="prod-price">69,000원</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- 수납장 상품 그룹 -->
+                <div class="content-group" id="group-cabinet">
+                    <ul class="product-list">
+                        <li><a href="#none"><img src="images/product/cabinet/3단 고무나무 원목 서랍장 187,800.avif"
+                                    alt="수납장 상품 1">
+                                <div class="product-info">
+                                    <p class="prod-name">3단 고무나무 원목 서랍장</p>
+                                    <p class="prod-price">187,800원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/cabinet/다용도 수납장 129,000.avif" alt="수납장 상품 2">
+                                <div class="product-info">
+                                    <p class="prod-name">다용도 수납장</p>
+                                    <p class="prod-price">129,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/cabinet/원목 수납장 299,000.avif" alt="수납장 상품 3">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 수납장</p>
+                                    <p class="prod-price">299,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/cabinet/원목 침대 협탁 33,900.avif" alt="수납장 상품 4">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 침대 협탁</p>
+                                    <p class="prod-price">33,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/cabinet/참나무무늬목 수납장 229,000.avif" alt="수납장 상품 5">
+                                <div class="product-info">
+                                    <p class="prod-name">참나무무늬목 수납장</p>
+                                    <p class="prod-price">229,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/cabinet/호두나무 수납장 299,000.avif" alt="수납장 상품 6">
+                                <div class="product-info">
+                                    <p class="prod-name">호두나무 수납장</p>
+                                    <p class="prod-price">299,000원</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- 의자 상품 그룹 -->
+                <div class="content-group" id="group-chair">
+                    <ul class="product-list">
+                        <li><a href="#none"><img src="images/product/chair/노르딕 체어 원목 의자 62,400.avif" alt="의자 상품 1">
+                                <div class="product-info">
+                                    <p class="prod-name">노르딕 체어 원목 의자</p>
+                                    <p class="prod-price">62,400원</p>
+                                </div>
+                            </a></li>
+                        <li><a href=""><img src="images/product/chair/밤나무 접이식 의자 44,900.avif" alt="의자 상품 2">
+                                <div class="product-info">
+                                    <p class="prod-name">밤나무 접이식 의자</p>
+                                    <p class="prod-price">44,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/chair/원목 벤치의자 2인 113,000.avif" alt="의자 상품 3">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 벤치의자 2인</p>
+                                    <p class="prod-price">113,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/chair/원목 식탁 의자 49,900.avif" alt="의자 상품 4">
+                                <div class="product-info">
+                                    <p class="prod-name">원목 식탁 의자</p>
+                                    <p class="prod-price">49,900원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/chair/패브릭 원목 의자 1인 199,000.avif" alt="의자 상품 5">
+                                <div class="product-info">
+                                    <p class="prod-name">패브릭 원목 의자 1인</p>
+                                    <p class="prod-price">199,000원</p>
+                                </div>
+                            </a></li>
+                        <li><a href="#none"><img src="images/product/chair/편백 나무 의자 66,000.avif" alt="의자 상품 6">
+                                <div class="product-info">
+                                    <p class="prod-name">편백 나무 의자</p>
+                                    <p class="prod-price">66,000원</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- middle -->
+        <div class="logo-break-section">
+            <div class="logo-container-inner">
+
+                <!-- 왼쪽에서 떠오를 가구 모형 이미지 -->
+                <div class="furniture-obj obj-left">
+                    <img src="./images/midle-sec-01.png" alt="왼쪽 가구 모형">
+                </div>
+
+                <!-- 중앙 브랜드 로고 영역 -->
+                <div class="logo-box">
+                    <a href="#none">
+                        <img src="./images/icon/logo.png" alt="NA:KIT 로고">
+                    </a>
+                </div>
+
+                <!-- 오른쪽에서 떠오를 가구 모형 이미지 -->
+                <div class="furniture-obj obj-right">
+                    <img src="./images/midle-sec-02.png" alt="오른쪽 가구 모형">
+                </div>
+
+            </div>
+        </div>
+        <!-- Review -->
+        <div class="review-section">
+            <div data-aos="zoom-out-up" data-aos-duration="1500">
+                <h1 class="section-title">Review</h1>
+            </div>
+
+            <ul class="review-list">
+
+                <!-- 1번 리뷰 카드 -->
+                <li class="review-card">
+                    <div class="flip-container">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <img src="./images/Review/1-2.avif" alt="원목 탁자 앞면">
+                            </div>
+                            <div class="flip-back">
+                                <img src="./images/Review/1-1.avif" alt="원목 탁자 뒷면">
+                                <div class="hover-info-box">
+                                    <h2>원목 원형 테이블</h2>
+                                    <p>199,000원</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 쪼개진 별점 마크업 구조 (기본 5점 세팅) -->
+                    <div class="star-box">
+                        <a href="#none" class="star-item on" data-value="1">★</a>
+                        <a href="#none" class="star-item on" data-value="2">★</a>
+                        <a href="#none" class="star-item on" data-value="3">★</a>
+                        <a href="#none" class="star-item on" data-value="4">★</a>
+                        <a href="#none" class="star-item on" data-value="5">★</a>
+                        <span class="score-txt"><span class="num">5</span>점</span>
+                    </div>
+                    <p class="review-comment">생각보다 훨씬 따뜻한 분위기가 나서 놀랐어요. 가구 하나 바꿨는데 공간 전체 느낌이 달라졌어요.</p>
+                    <a href="#none" class="prod-badge">
+                        <div class="thumb-box"><img src="./images/Review/1-1.avif" alt=""></div>
+                        <span>원목 원형 탁자</span>
+                    </a>
+                </li>
+
+                <!-- 2번 리뷰 카드 -->
+                <li class="review-card">
+                    <div class="flip-container">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <img src="./images/Review/2-2.avif" alt="의자 앞면">
+                            </div>
+                            <div class="flip-back">
+                                <img src="./images/Review/2-1.avif" alt="의자 뒷면">
+                                <div class="hover-info-box">
+                                    <h2>원목 2인 테이블</h2>
+                                    <p>82,800원</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기본 4점 세팅 예시 (4번째 별까지만 on 클래스 부여) -->
+                    <div class="star-box">
+                        <a href="#none" class="star-item on" data-value="1">★</a>
+                        <a href="#none" class="star-item on" data-value="2">★</a>
+                        <a href="#none" class="star-item on" data-value="3">★</a>
+                        <a href="#none" class="star-item on" data-value="4">★</a>
+                        <a href="#none" class="star-item on" data-value="5">★</a>
+                        <span class="score-txt"><span class="num">5</span>점</span>
+                    </div>
+                    <p class="review-comment">원목 질감이 정말 자연스럽고 고급스러워요. 식탁 하나만 바꿨는데 집에 머무는 시간이 더 좋아졌어요.</p>
+                    <a href="#none" class="prod-badge">
+                        <div class="thumb-box"><img src="./images/Review/2-1.avif" alt=""></div>
+                        <span>원목 2인 테이블</span>
+                    </a>
+                </li>
+
+                <!-- 3번 리뷰 카드 -->
+                <li class="review-card">
+                    <div class="flip-container">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <img src="./images/Review/3-2.avif" alt="테이블 앞면">
+                            </div>
+                            <div class="flip-back">
+                                <img src="./images/Review/3-1.avif" alt="테이블 뒷면">
+                                <div class="hover-info-box">
+                                    <h2>책상 · 수납장</h2>
+                                    <p>252,800원</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="star-box">
+                        <a href="#none" class="star-item on" data-value="1">★</a>
+                        <a href="#none" class="star-item on" data-value="2">★</a>
+                        <a href="#none" class="star-item on" data-value="3">★</a>
+                        <a href="#none" class="star-item on" data-value="4">★</a>
+                        <a href="#none" class="star-item on" data-value="5">★</a>
+                        <span class="score-txt"><span class="num">5</span>점</span>
+                    </div>
+                    <p class="review-comment">작업 공간 분위기가 훨씬 정돈된 느낌이에요. 조립이 쉬워서 혼자서도 충분히 가능했어요.</p>
+                    <a href="#none" class="prod-badge">
+                        <div class="thumb-box"><img src="./images/Review/3-1.avif" alt=""></div>
+                        <span>책상 · 수납장</span>
+                    </a>
+                </li>
+
+                <!-- 4번 리뷰 카드 -->
+                <li class="review-card">
+                    <div class="flip-container">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <img src="./images/Review/4-2.avif" alt="수납장 앞면">
+                            </div>
+                            <div class="flip-back">
+                                <img src="./images/Review/4-1.avif" alt="수납장 뒷면">
+                                <div class="hover-info-box">
+                                    <h2>사이드 수납장</h2>
+                                    <p>69,000원</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="star-box">
+                        <a href="#none" class="star-item on" data-value="1">★</a>
+                        <a href="#none" class="star-item on" data-value="2">★</a>
+                        <a href="#none" class="star-item on" data-value="3">★</a>
+                        <a href="#none" class="star-item on" data-value="4">★</a>
+                        <a href="#none" class="star-item on" data-value="5">★</a>
+                        <span class="score-txt"><span class="num">5</span>점</span>
+                    </div>
+                    <p class="review-comment">필요할 때마다 구조를 바꿀 수 있어서 정말 만족해요. 이사 가더라도 계속 사용할 수 있을 것 같아요.</p>
+                    <a href="#none" class="prod-badge">
+                        <div class="thumb-box"><img src="./images/Review/4-1.avif" alt=""></div>
+                        <span>사이드 수납장</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- Lookbook Section -->
+        <div class="lookbook-section">
+            <div data-aos="fade-up" data-aos-duration="1500">
+                <h1 class="section-title">Lookbook</h1>
+            </div>
+
+            <div class="lookbook-content">
+
+                <!-- 1. 왼쪽 큰 룩북 이미지 및 가상 (+) 핀 버튼 -->
+                <div class="lookbook-left">
+                    <img src="./images/mainLookbook/case2.jpg" alt="전체 룩북 공간" class="main-look-img">
+
+                    <div class="pin-btn pin-hanger off" data-item="item-hanger">+</div>
+                    <div class="pin-btn pin-cabinet off" data-item="item-cabinet">+</div>
+                    <div class="pin-btn pin-table off" data-item="item-table">+</div>
+                    <div class="pin-btn pin-sofa on" data-item="item-sofa">+</div>
+                </div>
+
+                <!--  2. 오른쪽 개별 매칭 가구 영역 (총 4가지 매칭 이미지 그룹) -->
+                <div class="lookbook-right">
+
+                    <!-- [1] 소파 아이템 그룹 (초기 활성화 active) -->
+                    <div class="lookbook-item item-sofa active">
+                        <div class="prod-view-box">
+                            <img src="./images/mainLookbook/case2(2).jpg" alt="소파 단품 이미지">
+                        </div>
+                        <!-- ↙ 하단 정보창으로 텍스트와 View More 버튼 이동 -->
+                        <div class="prod-info-bottom">
+                            <h2 class="p-name">패브릭 2인 원목 소파</h2>
+                            <p class="p-price">248,900원</p>
+                            <a href="#none" class="btn-viewmore">View More <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- [2] 행거 아이템 그룹 -->
+                    <div class="lookbook-item item-hanger">
+                        <div class="prod-view-box">
+                            <img src="./images/mainLookbook/case2(5).jpg" alt="행거 단품 이미지">
+                        </div>
+                        <div class="prod-info-bottom">
+                            <h2 class="p-name">미니멀 원목 행거</h2>
+                            <p class="p-price">89,000원</p>
+                            <a href="#none" class="btn-viewmore">View More <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- [3] 수납장 아이템 그룹 -->
+                    <div class="lookbook-item item-cabinet">
+                        <div class="prod-view-box">
+                            <img src="./images/mainLookbook/case2(3).jpg" alt="수납장 단품 이미지">
+                        </div>
+                        <div class="prod-info-bottom">
+                            <h2 class="p-name">클래식 월넛 수납장</h2>
+                            <p class="p-price">320,000원</p>
+                            <a href="#none" class="btn-viewmore">View More <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- [4] 사이드 테이블 아이템 그룹 -->
+                    <div class="lookbook-item item-table">
+                        <div class="prod-view-box">
+                            <img src="./images/mainLookbook/case2(4).jpg" alt="테이블 단품 이미지">
+                        </div>
+                        <div class="prod-info-bottom">
+                            <h2 class="p-name">유리상판 원목 사이드 테이블</h2>
+                            <p class="p-price">115,000원</p>
+                            <a href="#none" class="btn-viewmore">View More <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- brand section -->
+        <div id="brand_wrap">
+            <!-- 배경이미지/높이 -->
+            <div class="B_txt">
+                <div data-aos="fade-right" data-aos-duration="1000"><h1>BRAND STORY</h1></div>
+                <div data-aos="fade-right" data-aos-duration="1500"><h2>공간은
+                    <br>사는 것이 아니라,
+                    <br>완성해가는 것입니다.
+                </h2></div>
+            </div>
+            <div class="S_txt" data-aos="fade-right" data-aos-duration="2000">
+                <p><span>NA:KIT</span>은 모듈형 가구를 통해
+                    <br>누구나 쉽게 변화하고,
+                    <br>오래도록 만족할 수 있는 공간을 제안합니다.
+                </p>
+                <div class="brand_v_btn" data-aos="fade-right" data-aos-duration="2500">
+                    <a href="./sub/Brandstory.html">BRAND STORY VIEW</a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div id="footer_wrap">
+            <div class="footer">
+                <div class="f_txt">
+                    <ul>
+                        <li><a href="#">고객문의</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                    <p>고객센터 : 051-234-5678</p>
+                    <p>주소 : 서울특별시 성동구 아차산로 123, 2층 (성수동2가)</p>
+                    <p>TEL :01-234-5678 FAX :01-234-5678 E-Mail :info@NA:KIT.com</p>
+                    <h5>Copyright ⓒ NA:KIT, All rights reserved.</h5>
+                </div>
+                <div>
+                    <ul class="sns_icon">
+                        <li><a href="#"><img src="./images/icon/footer_icon-01.png" alt="icon-01" width="40px"></a></li>
+                        <li><a href="#"><img src="./images/icon/footer_icon-02.png" alt="icon-02" width="40px"></a></li>
+                        <li><a href="#"><img src="./images/icon/footer_icon-03.png" alt="icon-03" width="40px"></a></li>
+                    </ul>
+                    <a href="./home.html"><img src="./images/icon/logo.png" alt="F_logo" width="300px"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- best product Js -->
+    <script>
+        var swiper = new Swiper(".bp", {
+            slidesPerView: 3,
+            spaceBetween: 40,
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+    <!-- 다운로드 JS -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <!-- 내가꾸민JS -->
+    <script src="./js/home_script.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
